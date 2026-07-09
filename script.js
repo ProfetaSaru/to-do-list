@@ -52,8 +52,7 @@ function checkingTask(event) {
     if (checkMark.innerText == '[ ]') {
         checkMark.textContent = '[x]'
     } else {
-        console.log('confirms');
-        console.log(checkMark.innerText);
+        checkMark.textContent = '[ ]'
     }
 }
 
