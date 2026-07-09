@@ -8,8 +8,7 @@
 */
 
 function createTaskElement() {
-    UUIDGenerator()
-    console.log(UUID);
+    console.log();
     taskList = document.getElementById('tasks')
     taskInput = document.getElementById("task-to-create")
     taskInputValue = taskInput.value
@@ -23,6 +22,7 @@ function createTaskElement() {
     button = document.createElement('button')
     button.className = 'task-check-mark'
     button.textContent = '[ ]'
+    button.addEventListener('click', checkingTask)
 
     //creates and assings a class to label element
     label = document.createElement('label')
@@ -45,6 +45,16 @@ function createTaskElement() {
     //appends task to task list
     taskList.appendChild(div)
     console.log(div)
+}
+
+function checkingTask(event) {
+    const checkMark = event.target.closest('.task-check-mark')
+    if (checkMark.innerText == '[ ]') {
+        checkMark.textContent = '[x]'
+    } else {
+        console.log('confirms');
+        console.log(checkMark.innerText);
+    }
 }
 
 function deleteTaskElement(event) {
