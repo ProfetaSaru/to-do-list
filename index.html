@@ -4,18 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ToDoList</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/8f2a5a3b45.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="pad">
         <div class="main-title">Santo's To Do List</div>
         <div class="create-task">
-            <button class="create-task-button" onclick="createTaskElement()">Create</button>
+            <button id="create-task-button">Create</button>
             <input id="task-to-create" type="text"></div>
         <div id="tasks" class="task-list">
         </div>
     </div>
-    <script src="script.js"></script>
+    <script type="module" src="script.js"></script>
 </body>
 </html>
