@@ -62,5 +62,7 @@ function checkingTask(event) {
 
 function deleteTaskElement(event) {
     const task = event.target.closest('.task')
+    const id = Number(task.dataset.id)
+    deleteTask(id)
     task.remove()
 }
