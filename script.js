@@ -42,29 +42,9 @@ function createNewTaskElement() {
         return
     }
     
-    // creates and assigns a class to check button element
-    button = document.createElement('button')
-    button.className = 'task-check-mark'
-    button.textContent = '[ ]'
-    button.addEventListener('click', checkingTask)
-
-    //creates and assings a class to label element
-    label = document.createElement('label')
-    label.className = 'task-text'
-    label.textContent = ' - '  + taskInputValue + ' - - '
-
-    // creates and assigns a class to check button element
-    trash = document.createElement('button')
-    trash.className = 'trash'
-    trash.textContent = 'trash'
-    trash.addEventListener('click', deleteTaskElement)
-
-    //creates and assings a class to the whole task element
-    div = document.createElement('div')
-    div.className = 'task'
-    div.appendChild(button)
-    div.appendChild(label)
-    div.appendChild(trash)
+    const div =  taskMaker(false, taskInputValue)
+    
+    const id = addTask(taskInputValue)
 
     //appends task to task list
     taskList.appendChild(div)
@@ -77,11 +57,7 @@ function checkingTask(event) {
     const newStatus = checkTask(id)
     
     const checkMark = event.target.closest('.task-check-mark')
-    if (checkMark.innerText == '[ ]') {
-        checkMark.textContent = '[x]'
-    } else {
-        checkMark.textContent = '[ ]'
-    }
+    checkMark.textContent = newStatus ? '[x]' : '[ ]'
 }
 
 function deleteTaskElement(event) {
