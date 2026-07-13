@@ -33,9 +33,9 @@ function taskMaker(status, taskInputValue) {
 
 function createNewTaskElement() {
     console.log();
-    taskList = document.getElementById('tasks')
-    taskInput = document.getElementById("task-to-create")
-    taskInputValue = taskInput.value
+    const taskList = document.getElementById('tasks')
+    const taskInput = document.getElementById("task-to-create")
+    const taskInputValue = taskInput.value
 
     if (taskInputValue == '') {
         console.log('no task input, write task');
@@ -72,6 +72,10 @@ function createNewTaskElement() {
 }
 
 function checkingTask(event) {
+    const task = event.target.closest('.task')
+    const id = Number(task.dataset.id)
+    const newStatus = checkTask(id)
+    
     const checkMark = event.target.closest('.task-check-mark')
     if (checkMark.innerText == '[ ]') {
         checkMark.textContent = '[x]'
