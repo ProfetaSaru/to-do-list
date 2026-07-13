@@ -66,3 +66,15 @@ function deleteTaskElement(event) {
     deleteTask(id)
     task.remove()
 }
+function renderFromStorage() {
+    const taskList = document.getElementById('tasks')
+    const array = getAllTasks()
+    for (let index = 0; index < array.length; index++) {
+        const element = array[index];
+        const task = taskMaker(element.status, element.text)
+        task.dataset.id = element.id
+        taskList.appendChild(task)
+    }
+}
+
+renderFromStorage()
