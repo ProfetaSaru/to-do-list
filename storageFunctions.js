@@ -26,9 +26,10 @@ export function addTask(text) {
 
 export function editTask(id, text) {
     const tasks = getAllTasks()
-    const task = tasks.find(t => t.id !== id)
+    const task = tasks.find(t => t.id === id)
     if (task) {
         task.text = text
+        saveAllTasks(tasks)
     }
     return task
 }
