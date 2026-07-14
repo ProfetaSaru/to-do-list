@@ -1,6 +1,89 @@
-/* #task{
+body{
+    height: 100vh;
+    background: linear-gradient(135deg, #FF8A80, #FF5252, #EF5350, #FF1744, #C62828);
+    font-family: sans-serif;
+    font-weight: bolder;
+}
+
+button{
+    height: 40px;
+    border-radius: 15%;
+    margin-left: 1%;
+    background-color: #9E9E9E;
+    border-color: #7B6608;
+    cursor: pointer;
+}
+
+textarea {
+    height: 40px;
+    border-color: black;
+    background-color: #424242;
+    color: white;
+}
+
+.pad {
+    width: 250px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient( #eeeeee, #9e9e9e, #9e9e9e, #9e9e9e, #9e9e9e, #9e9e9e);
+    padding: 1%;
+    border-radius: 5%;
+    border-style: solid;
+    border-color: #A7882C;
+}
+
+.create-task {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-bottom: 5%;
+}
+
+#task-to-create {
+    width: 100%;
+    height: 40px;
+    box-sizing: border-box;
+    resize: none;
+    text-align: left;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    font-family: inherit;
+    font-size: inherit;
+    padding: 8px;
+}
+.task-list {
+    width: 100%;
+}
+
+.task-edit {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    padding-top: 10px;
-    gap: 10px;
-} */
+    row-gap: 4px;
+}
+
+.task-edit-field {
+    height: auto;
+    grid-column: 1 / -1;
+}
+
+.task {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding-bottom: 2%;
+}
+
+.task-text {
+    margin-left: 5%;
+    padding-right: 2%;
+    flex: 1;
+    min-width: 0;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    color: #424242;
+}
+
+.trash {
+    margin-left: auto;
+}

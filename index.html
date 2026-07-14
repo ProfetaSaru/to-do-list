@@ -4,14 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ToDoList</title>
+    <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/8f2a5a3b45.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="pad">
-        <div class="main-title">Santo's To Do List</div>
+        <div class="main-title">To Do List</div>
         <div class="create-task">
-            <button id="create-task-button">Create</button>
-            <input id="task-to-create" type="text"></div>
+            <button id="create-task-button"><i class="fa-solid fa-pen-clip"></i></button>
+            <textarea id="task-to-create" rows="2"></textarea>
+        </div>
         <div id="tasks" class="task-list">
         </div>
     </div>

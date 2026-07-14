@@ -1,12 +1,4 @@
 
-function taskID() {
-    let taskNumber = Number(localStorage.getItem('taskNumber')) || 0
-    const id = taskNumber
-    taskNumber++
-    localStorage.setItem('taskNumber', taskNumber)
-    return id
-}
-
 export function getAllTasks() {
     const raw = localStorage.getItem("tasks")
     return raw ? JSON.parse(raw) : []
@@ -16,11 +8,11 @@ export function saveAllTasks(tasks) {
     localStorage.setItem("tasks", JSON.stringify(tasks))
 }
 
-export function addTask(text) {
-    const tasks = getAllTasks()
-    const id = taskID()
-    tasks.push({id: id, status: false, text: text })
-    saveAllTasks(tasks)
+function taskID() {
+    let taskNumber = Number(localStorage.getItem('taskNumber')) || 0
+    const id = taskNumber
+    taskNumber++
+    localStorage.setItem('taskNumber', taskNumber)
     return id
 }
 
@@ -48,4 +40,12 @@ export function deleteTask(id) {
     const tasks = getAllTasks()
     const filtered = tasks.filter(t => t.id !== id)
     saveAllTasks(filtered)
+}
+
+export function addTask(text) {
+    const tasks = getAllTasks()
+    const id = taskID()
+    tasks.push({id: id, status: false, text: text })
+    saveAllTasks(tasks)
+    return id
 }
