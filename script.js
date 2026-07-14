@@ -46,7 +46,7 @@ function createNewTaskElement() {
     const div =  taskMaker(false, taskInputValue)
     
     const id = addTask(taskInputValue)
-
+    
     //appends task to task list
     div.dataset.id = id
     taskList.appendChild(div)
