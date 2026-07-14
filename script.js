@@ -17,7 +17,7 @@ function element(tag, elementClass, textContent, event) {
 function taskMaker(status, taskInputValue) {
     const checkText = status ? '[x]' : '[ ]'
     const button = element('button', 'task-check-mark', checkText, checkingTask)
-    const label = element('label', 'task-text', ' - '  + taskInputValue + ' - - ')
+    const label = element('label', 'task-text', taskInputValue)
     const trash = element('button', 'trash', 'trash', deleteTaskElement)
     const edit = element('button', 'edit-button', 'edit')
     
