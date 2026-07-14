@@ -68,6 +68,24 @@ function deleteTaskElement(event) {
     deleteTask(id)
     task.remove()
 }
+
+function editTheTask(event) {
+    const task = event.target.closest('.task')
+    const id = Number(task.dataset.id)
+    const currentLabel = task.querySelector('.task-text')
+    const currentText = currentLabel.textContent
+
+    const input = element('input', 'task-edit-field')
+    input.value = currentText
+    const confirm = element('button', 'confirm', 'confirm', confirmEdit)
+    const cancel = element('button', 'cancel', 'cancel', cancelEdit)
+
+    task.innerHTML = ''
+    task.dataset.id = id
+    task.appendChild(input)
+    task.appendChild(confirm)
+    task.appendChild(cancel)
+}
 function renderFromStorage() {
     const taskList = document.getElementById('tasks')
     const array = getAllTasks()
