@@ -86,6 +86,17 @@ function editTheTask(event) {
     task.appendChild(confirm)
     task.appendChild(cancel)
 }
+
+function confirmEdit(event) {
+    const task = event.target.closest('.task')
+    const id = Number(task.dataset.id)
+    const input = task.querySelector('.task-edit-field')
+
+    const test = editTask(id, input.value)
+    console.log(test);
+    
+    rebuildTask(task, id)
+}
 function renderFromStorage() {
     const taskList = document.getElementById('tasks')
     const array = getAllTasks()
