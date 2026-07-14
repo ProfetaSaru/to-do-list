@@ -1,4 +1,4 @@
-import { addTask, checkTask, editTask, getAllTasks, saveAllTasks, deleteTask } from "./storageFunctions.js";
+import { addTask, checkTask, editTask, getAllTasks, deleteTask } from "./storageFunctions.js";
 
 
 const createButton = document.getElementById('create-task-button')
@@ -95,6 +95,12 @@ function confirmEdit(event) {
     const test = editTask(id, input.value)
     console.log(test);
     
+    rebuildTask(task, id)
+}
+
+function cancelEdit(event) {
+    const task = event.target.closest('.task')
+    const id = Number(task.dataset.id)
     rebuildTask(task, id)
 }
 function renderFromStorage() {
