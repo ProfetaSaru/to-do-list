@@ -103,6 +103,15 @@ function cancelEdit(event) {
     const id = Number(task.dataset.id)
     rebuildTask(task, id)
 }
+
+function rebuildTask(task, id) {
+    const tasks = getAllTasks()
+    const saved = tasks.find(t => t.id === id)
+    const rebuilt = taskMaker(saved.status, saved.text)
+    rebuilt.dataset.id = id
+    task.replaceWith(rebuilt)
+}
+
 function renderFromStorage() {
     const taskList = document.getElementById('tasks')
     const array = getAllTasks()
