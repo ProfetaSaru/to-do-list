@@ -25,6 +25,7 @@ function taskMaker(status, taskInputValue) {
     const div = document.createElement('div')
     div.className = 'task'
     div.appendChild(button)
+    div.appendChild(edit)
     div.appendChild(label)
     div.appendChild(trash)
 
